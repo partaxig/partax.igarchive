@@ -1,0 +1,81 @@
+:root{
+  --bg: #fff;
+  --text: #000;
+  --muted: #666;
+  --gap: 1.25rem;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+header{
+  border-bottom:1px solid #000;
+  padding:1rem 0;
+}
+.topnav{
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+}
+.topnav a{ text-decoration:none; color:var(--text) }
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:1.75rem;
+}
+
+/* controls */
+.controls{ display:flex; justify-content:flex-start; margin-bottom:1rem; }
+#toggleDir{
+  background:transparent; border:0; cursor:pointer; font-size:0.85rem; letter-spacing:0.06em;
+}
+
+/* thumb row */
+.thumb-row{
+  display:flex;
+  gap:1rem;
+  overflow-x:auto;
+  padding-bottom:0.5rem;
+  margin-bottom:1.25rem;
+}
+.thumb{
+  min-width:220px;
+  width:22%;
+  background:#fff;
+  border-radius:4px;
+}
+.thumb img{ width:100%; display:block; height:140px; object-fit:cover; }
+.thumb figcaption{
+  padding:0.5rem 0;
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+/* directory style */
+.directory{ border-top:1px solid #eee; padding-top:1.25rem; }
+.dir-list{
+  column-count:2;
+  column-gap:3rem;
+  font-size:0.85rem;
+  color:var(--text);
+  max-height:300px;       /* 기본은 축약 */
+  overflow:hidden;
+  transition: max-height .35s ease;
+}
+.dir-list p{ margin:0 0 0.6rem 0; font-family:monospace; font-size:0.9rem; letter-spacing:0.04em; }
+
+/* expanded일 때 전체 보이기 */
+.dir-list.expanded{ max-height:2000px; }
+
+/* 반응형 */
+@media (max-width:800px){
+  .thumb{ width:45%; min-width:180px }
+  .dir-list{ column-count:1; max-height:220px }
+}
