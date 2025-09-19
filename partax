@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>작품집 — YOUR NAME</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="topnav">
+      <a href="#">M1. DIRECTORS</a>
+      <a href="#">M2. WORKS</a>
+      <a href="#">M3. CONTACT</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="controls">
+      <div class="expand">
+        <button id="toggleDir">EXPAND ALL ▾</button>
+      </div>
+    </div>
+
+    <!-- 썸네일 행 -->
+    <section class="thumb-row" aria-label="works">
+      <!-- 복사해서 작품 추가 -->
+      <figure class="thumb">
+        <img src="images/work1.jpg" alt="MANGO">
+        <figcaption>
+          <strong>MANGO</strong><br>
+          A Mediterranean Dream<br>Direct to Client
+        </figcaption>
+      </figure>
+
+      <figure class="thumb">
+        <img src="images/work2.jpg" alt="Rolling Stones">
+        <figcaption>
+          <strong>THE ROLLING STONES</strong><br>
+          Crisis Cross<br>Music Video
+        </figcaption>
+      </figure>
+
+      <figure class="thumb">
+        <img src="images/work3.jpg" alt="ASAP">
+        <figcaption>
+          <strong>ASAP ROCKY ft. FKA TWIGS</strong><br>
+          Fukk Sleep<br>Music Video
+        </figcaption>
+      </figure>
+
+      <figure class="thumb">
+        <img src="images/work4.jpg" alt="ROSALIA">
+        <figcaption>
+          <strong>ROSALÍA</strong><br>
+          De Aquí No Sales<br>Music Video
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- 디렉토리 리스트 -->
+    <section class="directory">
+      <div id="dirList" class="dir-list">
+        <p>D001 ASILUTAN SEIT</p>
+        <p>D002 ALAN MASFERER</p>
+        <p>D003 ART PRACTICE (US)</p>
+        <p>D004 DIANA KUNST</p>
+        <p>D005 IAN PONS JEWELL</p>
+        <p>D006 JAA PIRIATEE</p>
+        <p>D007 JARA MORAVEC</p>
+        <p>D008 KARIM HUI DO</p>
+        <p>D009 LANA SENAOUI</p>
+        <p>D010 LEIGH POWIS</p>
+        <p>D011 MACKENZIE SHEPPARD</p>
+        <p>D012 MAU MORÓG</p>
+        <p>D013 NICK RONEY</p>
+        <p>D014 ONDA</p>
+        <p>D015 RICK DARGE</p>
+        <p>D016 THOMAS ORMONDE (US)</p>
+        <p>D017 YUKITARO SHODA</p>
+        <!-- 더 추가 가능 -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // "EXPAND ALL" 버튼 기능 (토글)
+    const btn = document.getElementById('toggleDir');
+    const dir = document.getElementById('dirList');
+    btn.addEventListener('click', () => {
+      dir.classList.toggle('expanded');
+      btn.textContent = dir.classList.contains('expanded') ? 'COLLAPSE ▴' : 'EXPAND ALL ▾';
+    });
+  </script>
+</body>
+</html>
